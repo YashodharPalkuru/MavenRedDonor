@@ -28,12 +28,10 @@ public class RedDonorDaoImpl implements RedDonorDao{
 		
 	}*/
 
-	@Override
 	public void isAvailable(int drMobile) {
 		
 	}
 
-	@Override
 	public boolean login(String username, String drPswd) throws SQLException
 	{
 		
@@ -67,7 +65,6 @@ public class RedDonorDaoImpl implements RedDonorDao{
 		return Boolean.FALSE;
 	}
 
-	@Override
 	public void insertCsrfToken(String username, String drPswd, String csrfToken) throws SQLException
 	{
         PreparedStatement ps = null;
@@ -93,7 +90,6 @@ public class RedDonorDaoImpl implements RedDonorDao{
        
 	}
 
-	@Override
 	public UserBean getUserDetails(String userId) {
 		// TODO Auto-generated method stub
 		
@@ -144,7 +140,6 @@ public class RedDonorDaoImpl implements RedDonorDao{
 		
 	}
 
-	@Override
 	public LoginBean register(String fname, String lname, String email,
 		String password,String fbId) throws SQLException {
 		Boolean rs1 = null;
@@ -195,7 +190,6 @@ public class RedDonorDaoImpl implements RedDonorDao{
 		//return Boolean.FALSE;
 	}
 
-	@Override
 	public boolean isEmailAvailable(String email) throws SQLException {
 		PreparedStatement ps = null;
         Connection conn = null;
@@ -217,7 +211,6 @@ public class RedDonorDaoImpl implements RedDonorDao{
 		
 	}
 
-	@Override
 	public JSONArray getDonorList(String bloodGroup, String state,
 			String district, String subDistrict) throws SQLException {
 		System.out.println("getdonor list");
@@ -278,7 +271,6 @@ public class RedDonorDaoImpl implements RedDonorDao{
 	        }
 	}
 
-	@Override
 	public JSONArray getStatesList(String country) throws SQLException {
 		PreparedStatement ps = null;
         Connection conn = null;
@@ -298,7 +290,6 @@ public class RedDonorDaoImpl implements RedDonorDao{
         }
        return ja;
 	}
-	@Override
 	public JSONArray getDistrictsList(String state) throws SQLException {
 		PreparedStatement ps = null;
         Connection conn = null;
@@ -319,7 +310,6 @@ public class RedDonorDaoImpl implements RedDonorDao{
        return ja;
 	}
 	
-	@Override
 	public JSONArray getSubDistrictsList(String district) throws SQLException {
 		PreparedStatement ps = null;
         Connection conn = null;
@@ -340,7 +330,6 @@ public class RedDonorDaoImpl implements RedDonorDao{
        return ja;
 	}
 
-	@Override
 	public UserBean registerDetails(String bloodGroup, String mobile,
 			String state, String district, String subDistrict, String usrID, String facebookId) throws SQLException {
 		Boolean rs1 = null;

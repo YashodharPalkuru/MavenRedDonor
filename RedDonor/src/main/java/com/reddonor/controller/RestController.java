@@ -44,7 +44,6 @@ public class RestController{
 			request.setAttribute("fbid", facebookId);
 			 
 			if(facebookId.equals(getUserDeatails(request, response).getFacebookId())){
-				
 			  return new ModelAndView("home","facebook", facebook);	
 			}
 			return new ModelAndView("welcome", "facebook",facebook);
@@ -74,7 +73,7 @@ public class RestController{
 	}
 	
 	@RequestMapping(value = "/login.htm", method = RequestMethod.POST)
-	public ModelAndView loginUser(HttpServletRequest request,
+	public @ResponseBody ModelAndView loginUser(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		// read inputs
 		System.out.println("login entered");
@@ -114,7 +113,7 @@ public class RestController{
 			e.printStackTrace();
 			map.put("status", "400");
 		}
-		return new ModelAndView("jsonView", "model", map);
+		return new ModelAndView("", "model", map);
 
 	}
  
@@ -310,7 +309,7 @@ public class RestController{
 	}
 	
 	@RequestMapping("/isEmailAvailable.htm")
-	public ModelAndView isEmailAvailable(HttpServletRequest request,
+	public @ResponseBody ModelAndView isEmailAvailable(HttpServletRequest request,
 		HttpServletResponse response) throws Exception {
 		Map<String, Object> map = new HashMap<String,Object>();	
 		String email = request.getParameter("email");
@@ -323,12 +322,12 @@ public class RestController{
 			
 			 
 			
-		return new ModelAndView("jsonView", "model",map);
+		return new ModelAndView("", "model",map);
 		
 	}
 	
 	@RequestMapping("/donorSearch.htm")
-	public ModelAndView donorSearch(HttpServletRequest request,
+	public @ResponseBody ModelAndView donorSearch(HttpServletRequest request,
 		HttpServletResponse response) throws Exception {
 		System.out.println("get donor list entered");
 		String bloodGroup = request.getParameter("bloodGroup");
@@ -341,36 +340,36 @@ public class RestController{
 		
 		
 
-		return new ModelAndView("jsonView", "rows",data);
+		return new ModelAndView("", "rows",data);
 	}
 	
 	@RequestMapping("/getStatesList.htm")
-	public ModelAndView getStatesList(HttpServletRequest request,
+	public @ResponseBody ModelAndView getStatesList(HttpServletRequest request,
 		HttpServletResponse response) throws Exception {
 		System.out.println("get states list entered");
 		String country = request.getParameter("country");
 		JSONArray statesJson = redDonorService.getStatesList(country);
-		return new ModelAndView("jsonView","states",statesJson);
+		return new ModelAndView("","states",statesJson);
 		
 	}
 	
 	@RequestMapping("/getDistrictsList.htm")
-	public ModelAndView getDistrictsList(HttpServletRequest request,
+	public @ResponseBody ModelAndView getDistrictsList(HttpServletRequest request,
 		HttpServletResponse response) throws Exception {
 		System.out.println("getDistrictsList entered");
 		String state = request.getParameter("state");
 		JSONArray districtJson = redDonorService.getDistrictsList(state);
-		return new ModelAndView("jsonView","districts",districtJson);
+		return new ModelAndView("","districts",districtJson);
 		
 	}
 	
 	@RequestMapping("/getSubDistrictsList.htm")
-	public ModelAndView getSubDistrictsList(HttpServletRequest request,
+	public @ResponseBody ModelAndView getSubDistrictsList(HttpServletRequest request,
 		HttpServletResponse response) throws Exception {
 		System.out.println("getSubDistrictsList entered");
 		String district = request.getParameter("district");
 		JSONArray subDistrictJson = redDonorService.getSubDistrictsList(district);
-		return new ModelAndView("jsonView","subDistricts",subDistrictJson);
+		return new ModelAndView("","subDistricts",subDistrictJson);
 		
 	}
 	

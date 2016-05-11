@@ -17,10 +17,18 @@ public class DbManager
     	{
     		try 
     		{
-				//String url = "jdbc:mysql://sql6.freemysqlhosting.net:3306/sql6111909";
-    			//String url = "jdbc:mysql://127.4.175.2:3306/reddonordb";
-    			String url = "jdbc:mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/bloodindia";
 				
+    			
+    			/* Root User: adminphw77zK
+    			   Root Password: u4NF32pMuvqp
+    			   Database Name: bloodindia*/
+    			
+    			
+    			//String url = "jdbc:mysql://sql6.freemysqlhosting.net:3306/sql6111909";
+    			//String url = "jdbc:mysql://127.4.175.2:3306/reddonordb";
+    			//String url = "jdbc:mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/bloodindia";
+    			String url = "jdbc:mysql://127.6.10.2:3306/bloodindia";
+
 				//mysql://adminA1QamE9:RmkJI5gU3j9g@127.4.175.2:3306
 				
 				Class.forName("com.mysql.jdbc.Driver");

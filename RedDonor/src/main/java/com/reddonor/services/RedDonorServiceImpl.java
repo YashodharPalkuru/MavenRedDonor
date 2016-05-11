@@ -19,12 +19,10 @@ public class RedDonorServiceImpl implements RedDonorService{
 	
 	private RedDonorDao redDonorDao;
 	
-	@Override
 	public void isAvailable(int drMobile) {
 		
 	}
 
-	@Override
 	public LoginBean login(String username, String drPswd) throws SQLException {
 		
 		LoginBean loginBean = new LoginBean();
@@ -47,7 +45,6 @@ public class RedDonorServiceImpl implements RedDonorService{
 		
 	}
 
-	@Override
 	public String generateCsrfToken(String username, String drPswd)
 	{
 		return (username+drPswd).hashCode()+"";
@@ -62,7 +59,6 @@ public class RedDonorServiceImpl implements RedDonorService{
 		this.redDonorDao = redDonorDao;
 	}
 
-	@Override
 	public void isValidSession(String session) {
 		// TODO Auto-generated method stub
 		
@@ -76,14 +72,12 @@ public class RedDonorServiceImpl implements RedDonorService{
 		
 	}*/
 
-	@Override
 	public LoginBean loginFB() {
 		return null;
 		
 	}
 
 	
-	@Override
 	public UserBean getUserDetails(String userId) {
 		// TODO Auto-generated method stub
 	
@@ -100,7 +94,6 @@ public class RedDonorServiceImpl implements RedDonorService{
 		
 	}
 
-	@Override
 	public LoginBean register(String fname, String lname, String email,
 			String password,String fbId) throws Exception {
 		// TODO Auto-generated method stub
@@ -108,14 +101,12 @@ public class RedDonorServiceImpl implements RedDonorService{
 		return redDonorDao.register(fname, lname, email, password,fbId);
 	}
 
-	@Override
 	public boolean isEmailAvailable(String email) throws SQLException {
 		// TODO Auto-generated method stub
 		
 		return redDonorDao.isEmailAvailable(email);
 	}
 
-	@Override
 	public JSONArray getDonorList(String bloodGroup, String state,
 			String district, String subDistrict) throws SQLException {
 		JSONArray donorsList;
@@ -123,7 +114,6 @@ public class RedDonorServiceImpl implements RedDonorService{
 		return donorsList;
 	}
 
-	@Override
 	public JSONArray getStatesList(String country) throws SQLException {
 		// TODO Auto-generated method stub
 		return redDonorDao.getStatesList(country);
@@ -139,7 +129,6 @@ public class RedDonorServiceImpl implements RedDonorService{
 		return redDonorDao.getSubDistrictsList(district);
 	}
 
-	@Override
 	public UserBean registerDetails(String bloodGroup, String mobile,
 			String state, String district, String subDistrict, String usrID, String facebookId) throws SQLException {
 		return redDonorDao.registerDetails(bloodGroup, mobile, state, district, subDistrict,usrID, facebookId);
