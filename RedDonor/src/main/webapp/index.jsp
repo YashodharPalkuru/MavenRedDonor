@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse navbar-right " id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="#">A bout</a>
                     </li>
                     <li>
                         <a href="#">search</a>
